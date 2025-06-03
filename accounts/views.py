@@ -25,7 +25,7 @@ def login(request):
             messages.error(request, "Email not found")
         return redirect('login')
     
-    return render(request, 'login.html')
+    return render(request, 'index.html')
 
 
 
