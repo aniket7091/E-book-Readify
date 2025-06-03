@@ -1,0 +1,261 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.container {
+    display: flex;
+    height: 100vh;
+}
+
+/* Left side - Form section */
+.form-section {
+    flex: 1;
+    background: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    max-width: 500px;
+}
+
+.logo h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 3rem;
+    letter-spacing: -1px;
+}
+
+.form-container {
+    width: 100%;
+    max-width: 350px;
+}
+
+.form-container h2 {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.subtitle {
+    color: #666;
+    margin-bottom: 2rem;
+    line-height: 1.4;
+}
+
+.signup-form {
+    width: 100%;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #333;
+    font-weight: 500;
+    font-size: 0.95rem;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 0.875rem 1rem;
+    border: 2px solid #e1e5e9;
+    border-radius: 8px;
+    font-size: 1rem;
+    color: #333;
+    background: white;
+    transition: border-color 0.2s ease;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: #007bff;
+}
+
+.form-group input::placeholder {
+    color: #999;
+}
+
+.password-input {
+    position: relative;
+}
+
+.password-toggle {
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    color: #666;
+    opacity: 0.5;
+    transition: opacity 0.2s ease;
+}
+
+.password-toggle:hover {
+    opacity: 0.8;
+}
+
+.eye-icon {
+    width: 20px;
+    height: 20px;
+}
+
+.signup-btn {
+    width: 100%;
+    padding: 0.875rem 1rem;
+    background: #9ca3af;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    margin-top: 1rem;
+}
+
+.signup-btn:hover {
+    background: #007bff;
+}
+
+.login-link {
+    text-align: center;
+    margin-top: 2rem;
+    color: #666;
+}
+
+.login-text {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.login-text:hover {
+    text-decoration: underline;
+}
+
+/* Right side - Books section */
+.books-section {
+    flex: 1.2;
+    background: #f8f9fa;
+    padding: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.book-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 1rem;
+    width: 100%;
+    max-width: 600px;
+    height: 70vh;
+}
+
+.book-cover {
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease;
+}
+
+.book-cover:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.book-cover img {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+}
+
+/* Grid positioning */
+.book-1 {
+    grid-column: 1;
+    grid-row: 1 / 2;
+}
+
+.book-2 {
+    grid-column: 2 / 4;
+    grid-row: 1;
+}
+
+.book-3 {
+    grid-column: 1 / 2;
+    grid-row: 2 / 4;
+}
+
+.book-4 {
+    grid-column: 2;
+    grid-row: 2 / 4;
+}
+
+.book-5 {
+    grid-column: 3;
+    grid-row: 2;
+}
+
+.book-6 {
+    grid-column: 3;
+    grid-row: 3;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+    
+    .form-section {
+        max-width: none;
+        padding: 1.5rem;
+    }
+    
+    .books-section {
+        flex: 0.5;
+        padding: 1rem;
+    }
+    
+    .book-grid {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+        height: 40vh;
+    }
+    
+    .book-1, .book-3, .book-4 {
+        grid-column: span 1;
+        grid-row: span 1;
+    }
+    
+    .book-2 {
+        grid-column: span 2;
+    }
+    
+    .logo h1 {
+        font-size: 2rem;
+        margin-bottom: 2rem;
+    }
+    
+    .form-container h2 {
+        font-size: 1.5rem;
+    }
+}
